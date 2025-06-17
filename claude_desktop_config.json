@@ -1,0 +1,38 @@
+{
+  "mcpServers": {
+    "splunk": {
+      "command": "poetry",
+      "env": {
+        "SPLUNK_HOST": "<YOUR_SPLUNK_HOST>",
+        "SPLUNK_PORT": "8089",
+        "SPLUNK_USERNAME": "<YOUR_SPLUNK_USERNAME>",
+        "SPLUNK_PASSWORD": "<YOUR_SPLUNK_PASSWORD>",
+        "SPLUNK_SCHEME": "https",
+        "VERIFY_SSL": "false"
+      },
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/splunk-mcp",
+        "run",
+        "python",
+        "splunk_mcp.py",
+        "stdio"
+      ]
+    },
+    "meraki": {
+      "command": "uv",
+      "env": {
+        "MERAKI_KEY": "<YOUR_MERAKI_API_KEY>",
+        "FASTMCP_PORT": "5001"
+      },
+      "args": [
+        "--directory",
+        "/ABSOLUTE/PATH/TO/meraki-mcp",
+        "run",
+        "python",
+        "meraki_mcp.py",
+        "stdio"
+      ]
+    }
+  }
+}
